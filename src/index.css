@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* Base Colors - Green & White Theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Brand Colors - Green Theme */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 120 100% 40%;
+
+    --secondary: 120 20% 97%;
+    --secondary-foreground: 240 10% 3.9%;
+
+    --muted: 120 20% 97%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 20% 90%;
+    --input: 120 20% 95%;
+    --ring: 142 76% 36%;
+
+    --radius: 1rem;
+
+    /* Custom Portfolio Colors - Green Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(120 100% 40%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 100%), hsl(120 20% 97%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(120 100% 40%) 50%, hsl(100 80% 45%) 100%);
+    
+    /* Shadows */
+    --shadow-primary: 0 10px 40px -10px hsl(142 76% 36% / 0.3);
+    --shadow-glow: 0 0 60px hsl(142 76% 36% / 0.4);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
+
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 120 20% 20%;
+    --input: 120 20% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(120 20% 97%) 100%);
+  }
+
+  /* Custom Portfolio Utilities */
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+
+  .bounce-transition {
+    transition: var(--transition-bounce);
+  }
+}
